@@ -5,7 +5,7 @@
 //                          the calculated factor and the output is provided to generate the baud clock.
 // Parameter Description:       The module receives two parameters viz., SYSTM_OPERN_FREQ, REQD_BAUD_RATE. These parameters are configured from the 
 //                          respective values provided by the UART Top Module and their functionalities.
-// Pin Description      :   1). systm_clock_in: This is the input clock signal on which the system works.
+// Pin Description      :   1). systm_clock_in: This is the input clock signal on which the driver system works.
 //                          2). baud_clock_out: THis is the output clock signal needed to generate the required baudrate.
 
 module UART_Baud_Generator #(parameter SYSTM_OPERN_FREQ = 11059200, parameter REQD_BAUD_RATE = 9600) (systm_clock_in, baud_clock_out);
