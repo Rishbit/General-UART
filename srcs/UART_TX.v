@@ -11,19 +11,17 @@
 //                      to be transmitted, a start bit is sent again and the process continues until all the bytes are transferred. After all the bytes are 
 //                      transferred, the transmitter goes back to idle state.
 //                  2). State Descriptions:
-//                      REC_STATE_IDLE: The receiver is idle in this state, which means that no activities are being performed, and the receiver is awaiting a
-//                                      data to receive. In order to begin transmission, the receiver line is first pulled LOW for one clock cycle. This puts
-//                                      the UART in REC_STATE_STRT state, and the transmission begins.
-//                      REC_STATE_STRT: This is the state where the reciver performs the reception of the start bit. If the serial data input data line is LOW for
-//                                      two clock cycles after completing the IDLE state transition period (one clock cycle), the start bit is received, the 
-//                                      transmission is confirmed and the device goes into the data reception state. If the data line is pulled HIGH again, it 
-//                                      means that there is no data to receive and the device goes back to the idle state REC_STATE_IDLE.
-//                      REC_STATE_DATA: This is the data reception state. Two clock cycles are required to receive every bit. After all 8 bits are received, the 
-//                                      receiver goes into the REC_STATE_STOP, where it receives the stop bit.
-//                      REC_STATE_STOP: The receiver receives the stop bit in this state. It requires the serial data line to stay HIGH for two clock cycles to 
-//                                      receive the stop bit. After completing the reception of stop bit, the receiverr decides which state tomove to. If there are
-//                                      more bytes to transfer, the receiver goes to REC_STATE_STRT, where it has to receive the start bit for next transmission.
-//                                      If there are no more bytes to transfer, the receiver goes back to REC_STATE_IDLE state.
+//                      TRM_STATE_IDLE: The transmitter is idle in this state, which means that no activities are being performed, and the transmitter is awaiting 
+//                                      a data byte to transmit. Transmission begins when the "tx_data_valid" is HIGH, which puts the UART in TRM_STATE_STRT state,
+//                                      and the transmission begins.
+//                      TRM_STATE_STRT: This is the state where the transmitter performs the transmission of the start bit. The output serial tranmission data line
+//                                      is pulled LOW for two clock cycles and the start bit is transmitted, the device then goes into the data transmission state
+//                      TRM_STATE_DATA: This is the data transmission state. Two clock cycles are required to transmit every bit. After all 8 bits are transmitted,
+//                                      the transmitter goes into the TRM_STATE_STOP, where it transits the stop bit.
+//                      TRM_STATE_STOP: The transmitter transmits the stop bit in this state. The serial data line is pulled HIGH for two clock cycles to transmit
+//                                      the stop bit. After completing the transmission of stop bit, the transmitter decides which state to move to. If there are
+//                                      more bytes to transfer, the transmitter goes to TRM_STATE_STRT, where it has to transmit the start bit for next 
+//                                      transmission. If there are no more bytes to transfer, the transmitter goes back to TRM_STATE_IDLE state.
 //                  3). Pin Descriptions:
 //                        clock          : Input clock signal obtained from the UART_Baud_Generator module that operates the receiver with the specified baud rate.
 //                        bytes_to_rx    : This is a 10-bit input array, used to configure the amount of bytes of data that has to be received from the UART 
