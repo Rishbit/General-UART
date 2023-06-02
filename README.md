@@ -1,2 +1,7 @@
 # General-UART
-This is a general UART implementation that can be deployed on Xilinx FPGAs.
+**1). Basic Description:** The "General UART" is an implementation of a soft-computing UART module that can be deployed on Xilinx FPGAs and can be used for interfacing other sotf-core microcontrollers and other computing module with outside devices. The UART provides transceiving capability at integer divisibles of 11059200 baudrate, for e.g. 11059200, 5529600, 921600, 115200, 19200, and 9600.
+
+2). Parameter Description:
+  These instantiation parameters are used to initalize the UART module with 
+2.1). SYSTM_OPERN_FREQ:
+2.2). REQD_BAUD_RATE:
