@@ -23,25 +23,21 @@
 //                                      more bytes to transfer, the transmitter goes to TRM_STATE_STRT, where it has to transmit the start bit for next 
 //                                      transmission. If there are no more bytes to transfer, the transmitter goes back to TRM_STATE_IDLE state.
 //                  3). Pin Descriptions:
-//                        clock          : Input clock signal obtained from the UART_Baud_Generator module that operates the receiver with the specified baud rate.
-//                        bytes_to_rx    : This is a 10-bit input array, used to configure the amount of bytes of data that has to be received from the UART 
-//                                         module. This is configured in real time by the driving device.
-//                        serial_data_in : This is the serial data input to the receiver.
-//                        rx_data_valid  : This output signal indicates whether the received byte of data is valid for processing by the driving device. Any 
-//                                         number of new bytes.
-//                        rx_data_byte   : This is the byte of data received by the driving device.
+//                        clock           : Input clock signal obtained from the UART_Baud_Generator module that operates the transmitter with the specified 
+//                                          baud rate.
+//                        bytes_to_tx     : This is a 10-bit input array, used to configure the amount of bytes of data that has to be transmitted from the UART 
+//                                          module. This is configured in real time by the driving device.
+//                        tx_data_byte    : This is the byte of data to be transmitted, provided by the driving device.
+//                        tx_data_valid   : This input signal indicates whether the byte of data provided is valid for transmission. Any number of new bytes, even
+//                                          exceeding the amount provided by the bytes_to_tx signal can be tranmitted as long as this signal is high.
+//                        serial_data_out : This is the serial data output from the transmitter.
 
-module UART_TX (clock, bytes_to_tx, tx_data_byte, tx_data_valid, /*tx_clk_ctr, tx_state, tx_bit_ctr, bytes_to_tx_reg,*/ serial_data_out);
+module UART_TX (clock, bytes_to_tx, tx_data_byte, tx_data_valid, serial_data_out);
     
     input             clock;
     input       [9:0] bytes_to_tx;
     input       [7:0] tx_data_byte;
     input             tx_data_valid;
-    
-//    output reg       tx_clk_ctr = 1'b 0;
-//    output reg [2:0] tx_state = 3'b 0;
-//    output reg [2:0] tx_bit_ctr = 3'b 111;
-//    output reg [9:0] bytes_to_tx_reg     = 10'b 0;
     
     output reg       serial_data_out;
     
