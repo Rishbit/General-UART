@@ -26,7 +26,14 @@
 //                                      If there are no more bytes to transfer, the receiver goes back to REC_STATE_IDLE state.
 //                  3). Pin Descriptions:
 //                        clock          : Input clock signal obtained from the UART_Baud_Generator module that operates the receiver with the specified baud rate.
-//                        bytes_to_rx    : 
+//                        bytes_to_rx    : This is a 10-bit input array, used to configure the amount of bytes of data that has to be received from the UART 
+//                                          module. This is configured in real time by the driving device.
+//                        serial_data_in : This is the serial data input to the receiver.
+//                        rx_data_byte   : This is the byte of data to be transmitted provided by the driving device.
+//                        
+//output rx_data_valid: This output signal indicates whether the received byte of data is valid for processing by the driving device. Any number of new bytes.
+
+//rx_data_byte : This is the byte of data to be received by the driving device.
 //                        serial_data_in :
 //                        rx_data_valid  :
 //                        rx_data_byte   :
