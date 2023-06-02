@@ -1,10 +1,9 @@
 `timescale 1ns / 1ps
 
-// Description:     The BaudGenerator.v is used to divide the system clock by a factor necessary to obtain the required parameter. The module uses two parameters
+// Description          :     The BaudGenerator.v is used to divide the system clock by a factor necessary to obtain the required parameter. The module uses two parameters
 //              SYSTM_OPERN_FREQ and REQD_BAUD_RATE to calculate the division factor. Then the system clock is divided by the calculated factor and the output is
-//              provided to generate the baud clock;
-
-
+//              provided to generate the baud clock.
+// Parameter Description:
 module UART_Baud_Generator #(parameter SYSTM_OPERN_FREQ = 11059200, parameter REQD_BAUD_RATE = 9600) (systm_clock_in, baud_clock_out);
     
     input  systm_clock_in;
