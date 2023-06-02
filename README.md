@@ -23,7 +23,7 @@
 
 3.7). rx_ser_data_in    :  This is the serial data input to the receiver.
 
-3.8). output       rx_data_valid: This output signal indicates whether the received byte of data is valid for processing by the driving device. Any number of new bytes.
+3.8). rx_data_valid: This output signal indicates whether the received byte of data is valid for processing by the driving device. Any number of new bytes.
 
 3.9). rx_data_byte      : This is the byte of data to be received by the driving device.
 
