@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 
+// Description: The details of all the parameters and pins are provided in the README.md file. Please refer it in order to configure the UART for instantiation in your design.
 
 module UART #(parameter SYSTM_OPERN_FREQ = 11059200, REQD_BAUD_RATE = 9600)
             (clock, tx_no_bytes, rx_no_bytes, tx_data_byte, rx_ser_data_in, tx_data_valid, rx_data_valid, tx_ser_data_out, rx_data_byte);
