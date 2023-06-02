@@ -3,5 +3,6 @@
 
 **2). Parameter Description:** These instantiation parameters are used to initalize the UART module based on the respective system clock signal and the required baudrate. The parameters are:
 
-  **2.1). SYSTM_OPERN_FREQ:** This parameter provides the information of the operation frequency of the microcontroller or any other device that is driving the UART to transmit/receive data serially.
+2.1). SYSTM_OPERN_FREQ: This parameter provides the information of the operation frequency of the microcontroller or any other device that is driving the UART to transmit/receive data serially.
 
+2.2). REQD_BAUD_RATE: This parameter provides the information about the baudrate that is required for exchange of data betweeen the UART module driving device and the other device.
