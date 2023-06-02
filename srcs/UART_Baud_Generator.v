@@ -4,10 +4,10 @@
 //                              The BaudGenerator.v is used to divide the system clock by a factor necessary to obtain the required parameter. The module 
 //                          uses two parameters SYSTM_OPERN_FREQ and REQD_BAUD_RATE to calculate the division factor. Then the system clock is divided by 
 //                          the calculated factor and the output is provided to generate the baud clock.
-//                          2). Parameter Description:
+//                          2). Parameter Descriptions:
 //                              The module receives two parameters viz., SYSTM_OPERN_FREQ, REQD_BAUD_RATE. These parameters are configured from the respective 
 //                          values provided by the UART Top Module and their functionalities.
-//                          3). Pin Description:
+//                          3). Pin Descriptions:
 //                              1). systm_clock_in : This is the input clock signal on which the driver system works.
 //                              2). baud_clock_out : This is the output clock signal needed to generate the required baudrate.
 
