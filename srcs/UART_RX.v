@@ -8,8 +8,8 @@
 //                          It takes two clock cycles to receive a single bit of data. It takes an aditional one clock cycle to wake up the UART from idle state.
 //                      The receiver can be woken up from idle state by pulling the line LOW for one clock cycle. This is followed by a start bit spanning for two
 //                      clock cycles, followed by 8 data bits and the stop bit, marked by pulling the line HIGH for two clock cycles. If there are more bytes to
-//                      be received, a start bit is sent again and the process continues until all the bytes are transferred. After all the bytes are transferred,
-//                      the receiver goes back to idle state.
+//                      be received, a start bit is sent again and the process continues until all the bytes are received. After all the bytes are receiveded, the
+//                      receiver goes back to idle state.
 //                  2). State Descriptions:
 //                      REC_STATE_IDLE: The receiver is idle in this state, which means that no activities are being performed, and the receiver is awaiting a
 //                                      data to receive. In order to begin transmission, the receiver line is first pulled LOW for one clock cycle. This puts
