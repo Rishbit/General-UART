@@ -1,9 +1,12 @@
 `timescale 1ns / 1ps
 
-// Description:     1). Pin Descriptions:
+// Description:     1). General Description:
+//                      This is the top module for initializing the UART module in a design. The description of the design in the README.md file. The design
+//                  combines all the modules required for the UART functionality.
+//                  2). Pin Descriptions:
 //                      The details of all the parameters and pins are provided in the README.md file. Please refer it to configure the UART for initialization in
-//                      your design. The UART_Baud_Generator module is used to device the system clock with a factor to provide the required baud. The uart_clock is 
-//                      an internal signal that is the output of the UART_Baud_Generator module used to drive the UART_TX & UART_RX modules.
+//                  your design. The UART_Baud_Generator module is used to device the system clock with a factor to provide the required baud. The uart_clock is an
+//                  internal signal that is the output of the UART_Baud_Generator module used to drive the UART_TX & UART_RX modules.
 
 module UART #(parameter SYSTM_OPERN_FREQ = 11059200, REQD_BAUD_RATE = 9600)
             (clock, tx_no_bytes, rx_no_bytes, tx_data_byte, rx_ser_data_in, tx_data_valid, rx_data_valid, tx_ser_data_out, rx_data_byte);
