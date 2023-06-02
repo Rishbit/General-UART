@@ -12,8 +12,8 @@
 //                      receiver goes back to idle state.
 //                  2). State Descriptions:
 //                      REC_STATE_IDLE: The receiver is idle in this state, which means that no activities are being performed, and the receiver is awaiting a
-//                                      data to receive. In order to begin transmission, the receiver line is first pulled LOW for one clock cycle. This puts
-//                                      the UART in REC_STATE_STRT state, and the transmission begins.
+//                                      data to receive. In order to begin transmission, the receiver line is first pulled LOW for one clock cycle. This puts the
+//                                      UART in REC_STATE_STRT state, and the reception begins.
 //                      REC_STATE_STRT: This is the state where the reciver performs the reception of the start bit. If the serial data input data line is LOW for
 //                                      two clock cycles after completing the IDLE state transition period (one clock cycle), the start bit is received, the 
 //                                      transmission is confirmed and the device goes into the data reception state. If the data line is pulled HIGH again, it 
@@ -22,8 +22,8 @@
 //                                      receiver goes into the REC_STATE_STOP, where it receives the stop bit.
 //                      REC_STATE_STOP: The receiver receives the stop bit in this state. It requires the serial data line to stay HIGH for two clock cycles to 
 //                                      receive the stop bit. After completing the reception of stop bit, the receiverr decides which state tomove to. If there are
-//                                      more bytes to transfer, the receiver goes to REC_STATE_STRT, where it has to receive the start bit for next transmission.
-//                                      If there are no more bytes to transfer, the receiver goes back to REC_STATE_IDLE state.
+//                                      more bytes to receive, the receiver goes to REC_STATE_STRT, where it has to receive the start bit for next transmission.
+//                                      If there are no more bytes to receive, the receiver goes back to REC_STATE_IDLE state.
 //                  3). Pin Descriptions:
 //                        clock          : Input clock signal obtained from the UART_Baud_Generator module that operates the receiver with the specified baud rate.
 //                        bytes_to_rx    : This is a 10-bit input array, used to configure the amount of bytes of data that has to be received from the UART 
